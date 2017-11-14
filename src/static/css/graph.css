@@ -285,3 +285,21 @@
     bottom: initial!important;
 }
 
+.dependencyGraph{
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(30deg, #e2e2ec 0%, #fafafc 100%);
+    bottom: 0;
+    color: #3c3c5a;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    height: auto;
+    left: 0;
+    line-height: 150%;
+    margin: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+

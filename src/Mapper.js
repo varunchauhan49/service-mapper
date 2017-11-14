@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 import * as d3 from "d3";
-import Links from '../Links/Links.jsx';
-import Nodes from '../Nodes/Nodes.jsx';
-import ZoomableCanvas from '../Zoom/ZoomableCanvas.jsx';
+import Links from './static/jsx/Component/Links/Links.jsx';
+import Nodes from './static/jsx/Component/Nodes/Nodes.jsx';
+import ZoomableCanvas from './static/jsx/Component/Zoom/ZoomableCanvas.jsx';
 import * as Loader from 'halogen';
 
-var worker = new Worker('./../worker');
+import './static/css/graph.css';
+import './static/css/zoom.css';
 
 const EdgeMarkerDefinition = ({ selectedNodeId }) => {
   return (
@@ -79,31 +80,36 @@ class Mapper extends Component {
         adj[source].push(target);
         adj[target].push(source);
     });
-    worker.postMessage({
-      nodes: data.nodes,
-      links: data.links,
-      width: self.state.svgWidth,
-      height: self.state.svgHeight
+    var width = self.state.svgWidth,
+        height = self.state.svgHeight;
+    var simulation = d3.forceSimulation(data.nodes)
+        .force("link", d3.forceLink(data.links).distance(100))
+        .force("collide",d3.forceCollide( function(d){ return 50 }).iterations(1) )
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("y", d3.forceY())
+        .force("x", d3.forceX())
+        .stop();
+
+    for (var i = 0, n = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay())); i < n; ++i) {
+        simulation.tick();
+    }
+
+    self.setState({graphData:data,
+      selectedNodes:data,
+      nodeSelected:"",
+      nodeHighlight:"",
+      mapping:linkedByIndex,
+      adjMatrix:adj,
+      loading:false
     });
-    worker.onmessage = function(event) {
-      if(event.data.type === "end"){
-        self.setState({graphData:event.data,
-          selectedNodes:event.data,
-          nodeSelected:"",
-          nodeHighlight:"",
-          mapping:linkedByIndex,
-          adjMatrix:adj,
-          loading:false
-        });
-      }
-      if(self.props.searchKey !== ""){
-        self.state.graphData.nodes.forEach(function(item){
-          if(item.data.id === self.props.searchKey){
-            // self.handleNodeClick(item);
-          }
-        });
-      }
-    };
+    if(self.props.searchKey !== ""){
+      self.state.graphData.nodes.forEach(function(item){
+        if(item.data.id === self.props.searchKey){
+          // self.handleNodeClick(item);
+        }
+      });
+    }
   } 
 
   componentWillReceiveProps (nextProps) {
@@ -306,7 +312,7 @@ class Mapper extends Component {
       flexWrap: 'wrap'
     };
     return (
-      <div>
+      <div className="dependencyGraph">
         {
           (this.state.loading)?
             <div style={loaderStyle}>

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Mapper from './static/jsx/Component/DependencyMapper/Mapper.jsx';
-import './static/css/graph.css';
-import './static/css/zoom.css';
-import './static/css/App.css';
+import Mapper from './Mapper.js';
 import exampleJson from './static/json/example.json';
 
 
@@ -22,7 +19,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="dependencyGraph">
+      <div>
         <Mapper data={exampleJson}
           handleNodeDetailsClose={this.handleDetailsClose}
           nodeClicked={this.handleNodeClick}
