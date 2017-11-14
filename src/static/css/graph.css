@@ -1,0 +1,287 @@
+.njg-overlay{
+    background: #fbfbfb;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    color: #6d6357;
+    font-family: Arial, sans-serif;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    height: auto;
+    max-width: 400px;
+    min-width: 200px;
+    padding: 0 15px;
+    right: 10px;
+    top: 10px;
+    width: auto;
+}
+
+.njg-metadata{
+    background: #fbfbfb;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    color: #6d6357;
+    display: none;
+    font-family: Arial, sans-serif;
+    font-family: sans-serif;
+    font-size: 14px;
+    height: auto;
+    left: 10px;
+    max-width: 500px;
+    min-width: 200px;
+    padding: 0 15px;
+    top: 10px;
+    width: auto;
+}
+
+.njg-node{
+    stroke-opacity: 0.5;
+    stroke-width: 7px;
+    stroke: #fff;
+}
+
+.njg-node:hover,
+.njg-node.njg-open {
+    stroke: rgba(0, 0, 0, 0.2);
+}
+
+.njg-link{
+    cursor: pointer;
+    stroke: #999;
+    stroke-width: 2;
+    stroke-opacity: 0.25;
+}
+
+.njg-link:hover,
+.njg-link.njg-open{
+    stroke-width: 4 !important;
+    stroke-opacity: 0.5;
+}
+
+.njg-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.njg-tooltip{
+    font-family: sans-serif;
+    font-size: 12px;
+    fill: #000;
+    opacity: 0.5;
+    text-anchor: middle;
+}
+
+.njg-overlay{
+    display: none;
+    position: absolute;
+    z-index: 11;
+}
+
+.njg-close{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.njg-close:before { content: "\2716"; }
+
+.njg-metadata{
+    display: none;
+    position: absolute;
+    z-index: 12;
+}
+
+.njg-node{
+    cursor: pointer;
+    /*fill: none;*/
+    stroke-opacity: 1;
+    stroke-width: 0.12;
+    /*transition: stroke-opacity 0.333s ease-in-out, fill 0.333s ease-in-out;*/
+}
+.njg-link{ cursor: pointer }
+
+#njg-select-group {
+    text-align: center;
+    box-shadow: 0 0 10px #ccc;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    margin-top: -7.5em;
+    margin-left: -25%;
+    padding: 5em 2em;
+}
+
+#njg-select-group select {
+    font-size: 2em;
+    padding: 10px 15px;
+    width: 50%;
+    cursor: pointer;
+}
+
+#njg-select-group option {
+    padding: 0.5em;
+}
+
+#njg-select-group option[value=""] {
+    color: #aaa;
+}
+.hex{
+    cursor: pointer;
+    fill: none;
+    stroke-opacity: 1;
+    stroke-width: 0.12;
+    transition: stroke-opacity 0.333s ease-in-out, fill 0.333s ease-in-out;
+}
+.shape-hexagon{
+    cursor: pointer;
+}
+
+.background{
+    stroke: none;
+    fill:white;
+}
+@-webkit-keyframes argh-my-eyes {
+    0%   { fill: #800; }
+    49% { fill: #800; }
+    50% { fill: #f00; }
+    99% { fill: #f00; }
+    100% { fill: #800; }
+  }
+  @-moz-keyframes argh-my-eyes {
+    0%   { fill: #800; }
+    49% { fill: #800; }
+    50% { fill: #f00; }
+    99% { fill: #f00; }
+    100% { fill: #800; }
+  }
+  @keyframes argh-my-eyes {
+    0%   { fill: #800; }
+    49% { fill: #800; }
+    50% { fill: #f00; }
+    99% { fill: #f00; }
+    100% { fill: #800; }
+  }
+.shadow{
+    /*fill: none;
+    stroke-width: 0.18;*/
+    
+}
+.fill-rect{
+    fill:#d9cb6f;
+    stroke: none;
+    fill-opacity: 0.7;
+}
+.link{
+    fill: none;
+    stroke: #c9c9db;
+    stroke-width: 1px;
+}
+.rect{
+    fill: none;
+    stroke-opacity: 1;
+    stroke-width: 0.12;
+}
+.rectBackground{
+    fill: white;
+}
+.circleBlink{
+    -webkit-animation: blink 1s infinite;
+    -moz-animation:    blink 1s infinite;
+    animation:         blink 1s infinite;
+}
+@keyframes blink {
+    from {
+        fill:#F1A9A0;
+        r:4px
+    }
+    to {
+        fill:#F22613;
+        r: 10px
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        fill:#F1A9A0;
+        r: 4px
+    }
+    to {
+        fill:#F22613;
+        r:10px
+    }
+}
+
+.highlight-border{
+    fill: none;
+    stroke: #00d2ff;
+    stroke-width: 0.78;
+    stroke-opacity: 0.4;
+}
+
+.highlight-node{
+    fill: none;
+    stroke: #F1A9A0;
+    stroke-width: 0.78;
+    stroke-opacity: 0.4;
+}
+
+.highlight-node-circle{
+    fill: none;
+    stroke: #F1A9A0;
+    stroke-width: 18;
+    stroke-opacity: 0.4;
+}
+
+.highlight-border-circle{
+    fill: none;
+    stroke: #00d2ff;
+    stroke-width: 18;
+    stroke-opacity: 0.4;
+}
+
+.highlight-border-scm{
+    fill: none;
+    stroke: #00d2ff;
+    stroke-width: 18;
+    stroke-opacity: 0.4;
+}
+
+.highlight-node-scm{
+    fill: none;
+    stroke: #F1A9A0;
+    stroke-width: 18;
+    stroke-opacity: 0.4;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-left: 45%;
+  margin-top: 20%;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.DependencyMapper .modal-dialog{
+    width: 250px !important;
+    position: fixed;
+    top: 10%;
+    left: 1.5%;
+}
+.DependencyMapper .modal{
+    bottom: initial!important;
+}
+

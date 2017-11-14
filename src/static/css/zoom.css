@@ -1,0 +1,55 @@
+body{
+    overflow: hidden
+}
+.zoom-control {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 5px 7px 0;
+  bottom: 50px;
+  right: 40px;
+}
+.zoom-control a:hover {
+  border-color: transparent !important; 
+}
+.zoom-control .rc-slider {
+  margin: 5px 0;
+  height: 60px;
+}
+.zoom-control {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(238, 238, 244, 0.9);
+  border-radius: 4px;
+  color: #8383ac;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.7rem;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  bottom: 11px; }
+.zoom-control a {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #5b5b88;
+  cursor: pointer;
+  padding: 1px 3px;
+}
+.zoom-control a .fa {
+  font-size: 150%;
+  position: relative;
+  top: 2px;
+}
+.zoom-control a.selected {
+  border: 1px solid #8383ac;
+}
+.zoom-control a.active {
+  border: 1px solid #8383ac; 
+}
+.rc-slider .rc-slider-track {
+    background-color: #8383ac !important;
+}
+.rc-slider .rc-slider-handle {
+    border-color: #8383ac;
+}
