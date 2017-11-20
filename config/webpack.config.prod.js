@@ -162,6 +162,14 @@ module.exports = {
         loader: require.resolve('babel-loader'),
         
       },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+        ‘style’,
+        ‘css?importLoaders=1&modules&localIdentName=[name]__[local]___[hash:base64:5]!postcss’,
+        extractTextPluginOptions
+        )
+      },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.

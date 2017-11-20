@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import HexagonNode from './HexagonNode.jsx';
-import RectangleNode from './RectangleNode.jsx';
-import SCTNode from './SCTNode.jsx';
-import CircleNode from './CircleNode.jsx';
+import HexagonNode from './HexagonNode.js';
+import RectangleNode from './RectangleNode.js';
+import SCTNode from './SCTNode.js';
+import CircleNode from './CircleNode.js';
 import { Motion, spring } from 'react-motion';
 
 const NODES_SPRING_ANIMATION_CONFIG = { stiffness: 80, damping: 20, precision: 0.1 };

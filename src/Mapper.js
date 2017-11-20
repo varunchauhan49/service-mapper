@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 import * as d3 from "d3";
-import Links from './static/jsx/Component/Links/Links.jsx';
-import Nodes from './static/jsx/Component/Nodes/Nodes.jsx';
-import ZoomableCanvas from './static/jsx/Component/Zoom/ZoomableCanvas.jsx';
+import Links from './static/js/Component/Links/Links.js';
+import Nodes from './static/js/Component/Nodes/Nodes.js';
+import ZoomableCanvas from './static/js/Component/Zoom/ZoomableCanvas.js';
 import * as Loader from 'halogen';
 
 import './static/css/graph.css';

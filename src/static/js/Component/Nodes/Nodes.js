@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Node from './Node.jsx';
+import Node from './Node.js';
 
 class Nodes extends Component {
   constructor(props, context) {

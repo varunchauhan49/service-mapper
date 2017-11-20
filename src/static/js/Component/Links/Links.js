@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from './Link.jsx';
+import Link from './Link.js';
 
 class Links extends Component {
   constructor(props, context) {

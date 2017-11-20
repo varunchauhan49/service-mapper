@@ -1,4 +1,4 @@
-import ZoomControl from './ZoomControl.jsx'
+import ZoomControl from './ZoomControl.js'
 import * as d3 from "d3";
 import React, { Component } from 'react';
 import { event as d3Event, select } from 'd3-selection';
